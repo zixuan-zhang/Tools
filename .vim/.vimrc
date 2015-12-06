@@ -64,7 +64,9 @@ set backspace=2
 set ts=4
 set expandtab
 
-autocmd BufNewFile *.cpp,*.h exec ":call SetTitle()"
+set fileencoding=utf-8
+
+autocmd BufNewFile *.cpp,*.h  exec ":call SetTitle()"
 func SetTitle()
     if &filetype == 'cpp' || &filetype == 'h'
         call setline(1, "/*******************************************************************************")
@@ -148,7 +150,7 @@ set t_Co=256
 
 " Indent Guides
 " 随vim自启动
-let g:indent_guides_enable_on_vim_startup=1
+" let g:indent_guides_enable_on_vim_startup=1
 " define indent guide color
 let g:indent_guides_auto_colors=1
 " 从第二层开始可视化显示缩进
@@ -167,7 +169,7 @@ map <Leader>sp : CtrlSF<CR>
 " Nerdtree 设置
 map <C-F7> : NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
-let NERDTreeWinSize=32
+let NERDTreeWinSize=20
 " 设置位置
 let NERDTreeWinPos="right"
 " 显示隐藏文件
@@ -176,3 +178,10 @@ let NERDTreeShowHidden=1
 let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应buffer
 let NERDTreeAutoDeleteBuffer=1
+
+" indentLine设置
+let g:indentLine_enabled = 1
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#A4E57E'
+let g:indentLine_color_tty_light = 7
+let g:indentLine_color_dark = 1
