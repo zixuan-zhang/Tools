@@ -95,7 +95,7 @@ nmap <Leader>tp :tprevious<CR>
 " 设置tagbar子窗口左边
 let tagbar_left=1
 " 设置显示/隐藏标签列表子窗口快捷键
-map <C-F8> :TagbarToggle<CR>
+map <C-N> :TagbarToggle<CR>
 let tagbar_width=32
 " 设置不显示冗余信息
 let g:tagbar_compact=1
@@ -167,7 +167,7 @@ let mapleader = ","
 map <Leader>sp : CtrlSF<CR>
 
 " Nerdtree 设置
-map <C-F7> : NERDTreeToggle<CR>
+map <C-M> : NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
 let NERDTreeWinSize=20
 " 设置位置
