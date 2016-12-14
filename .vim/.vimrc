@@ -66,7 +66,7 @@ set expandtab
 
 set fileencoding=utf-8
 
-autocmd BufNewFile *.cpp,*.h  exec ":call SetTitle()"
+autocmd BufNewFile *.cpp,*.h,*.py  exec ":call SetTitle()"
 func SetTitle()
     if &filetype == 'cpp' || &filetype == 'h'
         call setline(1, "/*******************************************************************************")
@@ -77,6 +77,15 @@ func SetTitle()
         call append(line(".")+4, " *  @Date  : ".strftime("%c"))
         call append(line(".")+5, " ******************************************************************************/")
         call append(line(".")+6, "")
+    endif
+    if &filetype == 'python'
+        call setline(1, "\# encoding: utf-8")
+        call append(line("."), "")
+        call append(line(".")+1, "\##############################################################################")
+        call append(line(".")+2,"\####   File         : ".expand("%"))
+        call append(line(".")+3,"\####   Author       : zixuan.zhang.victor@gmail.com") 
+        call append(line(".")+4,"\####   Create Date  : ".strftime("%c"))
+        call append(line(".")+5, "\##############################################################################")
     endif
 endfunc 
 
